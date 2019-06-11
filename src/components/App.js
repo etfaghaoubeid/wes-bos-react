@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header'
-import StorePicker from './StorePicker'
 import Order from './Order';
 import Fish from  './Fish'
 import Inventory from './Inventory'
