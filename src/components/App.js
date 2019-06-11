@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/Header'
-import StorePicker from './components/StorePicker'
+import Header from './Header'
+import StorePicker from './StorePicker'
 
 class App extends Component {
 
