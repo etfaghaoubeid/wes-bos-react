@@ -1,9 +1,10 @@
 import React from 'react'
 
 class AddFishForm extends React.Component {
-    nameRaf = React.createRef();
-    priceRaf = React.createRef()
+    nameRef = React.createRef();
+    priceRef = React.createRef()
     statusRef = React.createRef()
+    imageRef = React.createRef()
     descriptionRef = React.createRef()
     
     
@@ -11,10 +12,11 @@ class AddFishForm extends React.Component {
     handleSubmit = (event)=>{
         event.preventDefault()
         const fish ={
-            nameRaf : this.name.value.value,
-            priceRaf : this.price.value.value,
-            statusRef : this.status.value.value,
-            descriptionRef : this.description.value.value
+            name : this.nameRef.current.value,
+            price: this.priceRef.current.value,
+            status: this.statusRef.current.value,
+            description : this.descriptionRef.current.value,
+            image :this.imageRef.current.value
         }
         console.log(fish);
 
@@ -22,16 +24,16 @@ class AddFishForm extends React.Component {
     }
     render(){
         return (
-            <form  onSubmit={this.handleSubmit}>
-                <input type="text " name ='name'/>
-                <input type="text " name ='price'/>
-                <select name="status" id="">
+            <form form className="fish-edit"  onSubmit={this.handleSubmit}>
+                <input type="text " ref={this.nameRef} name ='name' placeholder="name"/>
+                <input type="text " ref={this.priceRef} name ='price' placeholder="Price"/>
+                <select name="status" ref={this.statusRef} >
                     <option value="available">Fresh</option>
                     <option value="unavailable"> Sold out</option>
                 </select>
-                <textarea name="description"></textarea>
-                <input type="text " name ='image'/>
-                <button type="submit"></button>
+                <textarea name="description" ref={this.descriptionRef}placeholder="descrption"></textarea>
+                <input type="text " name ='image' ref={this.imageRef}placeholder="image url"/>
+                <button type="submit">Add </button>
     
             </form>
         )
