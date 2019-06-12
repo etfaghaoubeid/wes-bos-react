@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Fish() {
-    return (
-        <div>
-            <h1>fish component</h1>
-        </div>
-    )
+class Fish extends Component {
+    render() {
+        return (
+            <div className='single-fish'>
+                <h1>hhello</h1>
+                
+            </div>
+        )
+    }
 }
+export default  Fish;

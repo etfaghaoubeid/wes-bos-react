@@ -24,7 +24,7 @@ class AddFishForm extends React.Component {
 
     }
     render(){
-        return (
+        return (<div>
             <form  className="fish-edit"  onSubmit={this.handleSubmit}>
                 <input type="text " ref={this.nameRef} name ='name' placeholder="name"/>
                 <input type="text " ref={this.priceRef} name ='price' placeholder="Price"/>
@@ -37,6 +37,8 @@ class AddFishForm extends React.Component {
                 <button type="submit">Add </button>
     
             </form>
+                <button onClick={this.props.loadSampleFishes}>Load Sample fishes</button>
+                </div>
         )
 
     }

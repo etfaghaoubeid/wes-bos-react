@@ -5,7 +5,7 @@ class  Inventory extends React.Component {
     render(){
         return (
             <div>
-            <AddFishForm addFish={this.props.addFish} />
+            <AddFishForm addFish={this.props.addFish}  loadSampleFishes={this.props.loadSampleFishes}/>
     
             </div>
         )
