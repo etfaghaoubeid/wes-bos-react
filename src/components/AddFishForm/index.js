@@ -16,7 +16,7 @@ class AddFishForm extends React.Component {
             price: this.priceRef.current.value,
             status: this.statusRef.current.value,
             description : this.descriptionRef.current.value,
-            image :this.imageRef.current.value
+            image : this.imageRef.current.value
         }
         this.props.addFish(fish)
         event.currentTarget.reset()

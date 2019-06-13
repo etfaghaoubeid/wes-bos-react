@@ -8,7 +8,7 @@ import fishes from '../sample-fishes';
 class App extends Component {
   state={
     fishes:{},
-    orders:{}
+    order:{}
   }
   addFish =fish=>{
     const fishes = {...this.state.fishes}
@@ -17,14 +17,18 @@ class App extends Component {
     this.setState({
       fishes
     })
-
-
   }
   loadSampleFishes=()=>{
     this.setState({
       fishes
     })
 
+  }
+  addToOrder=(itemIndex)=>{
+    // copy state 
+    let order = {...this.state.order}
+    order[itemIndex] = order[itemIndex] +1 || 1
+    this.setState({order})
   }
   render() {
     return (
@@ -34,14 +38,14 @@ class App extends Component {
         <ul className="fishes">
           
             {Object.keys(this.state.fishes).map(fish=>(
-              <Fish />
+              <Fish key={fish} fish={this.state.fishes[`${fish}`]}  addToOrder = {this.addToOrder} itemIndex={fish}/>
             ))}
         </ul>
       </div>
-      <Order
+      <Order fishes ={this.state.fishes} order ={this.state.order}
        
       />
-      <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}/>
+      <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
       </div>
        
     );
