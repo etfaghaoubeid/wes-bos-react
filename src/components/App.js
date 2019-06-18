@@ -19,6 +19,7 @@ class App extends Component {
     const localStorageRef = localStorage.getItem(`${this.props.match.params.storeId}`)
     this.setState({order:JSON.parse(localStorageRef)})
   }
+  
   componentWillUnmount(){
     base.removeBinding(this.ref)
   }
@@ -60,7 +61,7 @@ class App extends Component {
       </div>
       <Order fishes ={this.state.fishes} 
           order ={this.state.order}
-          params={this.props.match.params}
+          parrams={this.props.match.params}
        
       />
       <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
