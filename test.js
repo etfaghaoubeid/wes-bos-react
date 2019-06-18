@@ -10,20 +10,25 @@ let test =[{
 }]
 
 
-function objectsOrderedByRankin(ranking){
-    let r = []
-    let  startValue = ranking[0].ranking
-    for(let i =1;i<ranking.length;i++){
-        if(ranking[i].ranking>startValue){
-            startValue = ranking[i].ranking
+function objectsOrderedByRankin(arr){
+    let inter = 0;
+    let r =[]
+    let min = arr[0].ranking;
 
-        }
-        else{
-            r.push(startValue);
-            startValue = ranking[i].ranking
+    for(let i = 1;arr.length<i;i++){
+        for(let j=0 ;j<arr.length; j++){
+            if(arr[j].ranking<=min){
+                inter = min;
+                 arr[j].ranking = min  ;
+                 min = arr[j].ranking
+              
+            }else{
+               min = min ;
+               inter = 0 
+            }
         }
     }
-    return r;
+    return arr;
     
 }
 console.log(objectsOrderedByRankin(test))
