@@ -22,6 +22,7 @@ export default class Order extends React.Component {
         }
         
     }
+    
     render(){
         const orderId  = Object.keys(this.props.order)
         let total = orderId.reduce((prevTotal,item)=>{
@@ -46,16 +47,9 @@ export default class Order extends React.Component {
                 orderId.map(this.renderOrderItem)
                 }
                 <li><span><strong> {formatPrice(total)} </strong></span></li>
-                
-            </ul>
-        
-
-            
+            </ul>            
         </div>
     )
 
     }
- 
-
-
 }
