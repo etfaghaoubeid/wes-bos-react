@@ -25,6 +25,7 @@ export default class Order extends React.Component {
     
     render(){
         const orderId  = Object.keys(this.props.order)
+
         let total = orderId.reduce((prevTotal,item)=>{
             let fish = this.props.fishes[item]
             let count = this.props.order[item]

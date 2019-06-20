@@ -15,13 +15,12 @@ function objectsOrderedByRankin(arr){
     let r =[]
     let min = arr[0].ranking;
 
-    for(let i = 1;arr.length<i;i++){
+    for(let i =0;arr.length<i;i++){
         for(let j=0 ;j<arr.length; j++){
             if(arr[j].ranking<=min){
                 inter = min;
-                 arr[j].ranking = min  ;
-                 min = arr[j].ranking
-              
+                 arr[i].ranking = arr[j].ranking  ;
+        
             }else{
                min = min ;
                inter = 0 

@@ -17,7 +17,10 @@ class App extends Component {
   componentWillMount(){
     this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`,{context:this,state:'fishes'})
     const localStorageRef = localStorage.getItem(`${this.props.match.params.storeId}`)
-    this.setState({order:JSON.parse(localStorageRef)})
+    if(localStorageRef){
+
+      this.setState({order:JSON.parse(localStorageRef)})
+    }
   }
   
   componentWillUnmount(){
