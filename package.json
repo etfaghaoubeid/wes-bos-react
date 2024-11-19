@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer-stylus": "0.14.0",
-    "firebase": "^6.1.1",
+    "firebase": "^10.9.0",
     "re-base": "^4.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
